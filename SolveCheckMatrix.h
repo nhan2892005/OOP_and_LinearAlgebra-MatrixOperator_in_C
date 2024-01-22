@@ -1,3 +1,6 @@
+#ifndef SolveCheckMatrix_h
+#define SolveCheckMatrix_h
+
 #include "process.h"
 #include "handleFile.h"
 
@@ -6,9 +9,9 @@ int readFile(string ifilename, string ofilename){
     ofstream resultCheck(ofilename);
     if (needToCheck.is_open() && resultCheck.is_open())
     {
-        /*///////////////////////////////////////*
+        /*///////////////////////////////////////
         while(!needToCheck.eof()){
-            ;
+            
         }
         //////////////////////////////////////*/
         needToCheck.close();
@@ -17,3 +20,5 @@ int readFile(string ifilename, string ofilename){
     }
     else return 0;
 }
+
+#endif /* SolveCheckMatrix_h */
