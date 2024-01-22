@@ -1,2 +1,1 @@
-# Matrix Solution
-## 
+# Matrix Solution by C++
