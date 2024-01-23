@@ -43,7 +43,7 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
       | `isNilpotent`       | Kiểm tra ma trận luỹ linh                    | `bool isNilpotent()`               |
       | `isIdempotent`      | Kiểm tra ma trận luỹ đẳng                    | `bool isIdempotent()`              |
 
-      
+- Các tính năng khác đang trong quá trình hoàn thiện, chân thành xin lỗi.     
 ## Quá trình tiếp cận dự án
 Sau quá trình tiếp cận với môn Đại số tuyến tính và Kỹ thật lập trình ở trường Đại học Bách Khoa Tp.HCM, tôi đã nghĩ tới dự án này như một cách để hiểu rõ hơn về 2 môn học này.
 
