@@ -49,7 +49,7 @@ class Matrix
                 file << endl;
             }
         }
-
+           
 
         //check if the matrix is square
         bool isSquare()
@@ -316,6 +316,11 @@ class Matrix
             {
                 return false;
             }
+        }
+        //Check if the matrix is triangular (ma trận tam giác)
+        bool isTriangular()
+        {
+            return (isUpperTriangular() || isLowerTriangular());
         }
         //Transpose of a matrix (ma trận chuyển vị A^T)
         Matrix transpose()
