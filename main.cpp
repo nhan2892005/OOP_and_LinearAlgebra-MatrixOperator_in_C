@@ -7,7 +7,7 @@
         NGUYEN PHUC NHAN (Founder)
 */
 
-#include "process.h"
+#include "headerfile/process.h"
 /*
 //Các hàm lấy dữ liệu ma trận
     getname: lấy tên ma trận (string getName())                     success
@@ -39,13 +39,13 @@
     **** Chưa xử lý input ****
 */
 
-#include "handleFile.h"
+#include "headerfile/handleFile.h"
 //readFileInit(filename, matrices): đọc file và lưu vào vector<Matrix*> matrices
 //clearOldOutput(filename): xóa nội dung file cũ
 //checkReadfile(bool isRead): kiểm tra đọc được file không
 //readFile(ifilename, ofilename): kiểm tra đọc được file không
 
-#include "SolveCheckMatrix.h"
+#include "headerfile/SolveCheckMatrix.h"
 //readInputCheck(ifilename, ofilename, matrices, MatrixName): đọc file
 //solveProblem(ofilename, matrices, MatrixName, Name, operatorCheck): xử lý kiểm tra
 
