@@ -20,16 +20,6 @@ std::unordered_map<std::string, function<bool(Matrix*)>> checkFunctions = {
     {"isTriangular",      [](Matrix* matrix) { return matrix->isTriangular();       }}
 };
 
-int readFile(string ifilename, string ofilename){
-    ifstream needToCheck(ifilename);
-    ofstream resultCheck(ofilename, ios::app);
-    if (needToCheck.is_open() && resultCheck.is_open())
-    {
-        return 1;
-    }
-    else return 0;
-}
-
 void solveProblem(string ofilename,
                   vector<Matrix*> matrices,
                   unordered_map<string, int> MatrixName,

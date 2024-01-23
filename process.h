@@ -456,8 +456,7 @@ class Matrix
             return (*this);
         }
 
-        /*
-        //Exponentiation of a matrix (Luỹ thừa ma trận)
+        //Exponentiation of a matrix (Lũy thừa ma trận)
         //If the matrix is not square, print "Error!"
         //    and return a matrix with 0 row and 0 column
         Matrix operator^(const int & n)
@@ -477,23 +476,13 @@ class Matrix
                     }
                     return temp;
                 }
-                else
-                {
-                    Matrix temp = (*this);
-                    for (int i = 1; i < -n; i++)
-                    {
-                        temp = temp * (*this);
-                    }
-                    return temp.inverse();
-                }
             }
             else
             {
                 cout << "Error!" << endl;
-                return Matrix(nameofMatrix, 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
             }
-        }*/
-
+        }
         //Create Identity matrix (Tạo ma trận đơn vị)
         Matrix identity(int n)
         {
@@ -502,7 +491,7 @@ class Matrix
             {
                 temp[i][i] = 1;
             }
-            return Matrix(nameofMatrix, n, n, temp);
+            return Matrix("Identity", n, n, temp);
         }
 };
 

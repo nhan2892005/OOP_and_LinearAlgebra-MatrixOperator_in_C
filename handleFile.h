@@ -52,4 +52,14 @@ void checkReadfile(bool isRead){
     else cout << "Read file failed!" << endl;
 }
 
+int readFile(string ifilename, string ofilename){
+    ifstream needToCheck(ifilename);
+    ofstream resultCheck(ofilename, ios::app);
+    if (needToCheck.is_open() && resultCheck.is_open())
+    {
+        return 1;
+    }
+    else return 0;
+}
+
 #endif /* handleFile_h */

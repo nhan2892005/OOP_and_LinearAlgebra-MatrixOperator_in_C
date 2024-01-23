@@ -8,14 +8,13 @@
 */
 
 #include "process.h"
-// Các hàm được sử dụng để tính toán ma trận
 /*
-    //Các hàm lấy dữ liệu ma trận
+//Các hàm lấy dữ liệu ma trận
     getname: lấy tên ma trận (string getName())                     success
     getrow: lấy số hàng (int getRow())                              success
     getcol: lấy số cột (int getCol())                               success
     getmatrix: lấy ma trận (vector<vector<int>> getMatrix())        success
-
+//Các hàm check ma trận
     isSquare: kiểm tra ma trận vuông (bool isSquare())
     isDiagonal: kiểm tra ma trận chéo (bool isDiagonal())
     isIdentity: kiểm tra ma trận đơn vị (bool isIdentity())
@@ -28,7 +27,7 @@
     isInvolutory: kiểm tra ma trận A^2=I (bool isInvolutory())
     isNilpotent: kiểm tra ma trận luỹ linh (bool isNilpotent())
     isIdempotent: kiểm tra ma trận luỹ đẳng (bool isIdempotent())
-    transpose: chuyển vị ma trận (Matrix transpose())
+//Các hàm tính toán ma trận
     trace: tính đường chéo chính (double trace())
     operator +: cộng hai ma trận (Matrix operator +())
     operator -: trừ hai ma trận (Matrix operator -())
@@ -36,15 +35,19 @@
     operator *: nhân ma trận với một số thực (Matrix operator *())
     operator =: gán ma trận (Matrix operator =())
     operator ^: lũy thừa ma trận (Matrix operator ^())
-    print: in ma trận (void print())
     identity: tạo ma trận đơn vị (Matrix identity())
+    **** Chưa xử lý input ****
 */
 
 #include "handleFile.h"
 //readFileInit(filename, matrices): đọc file và lưu vào vector<Matrix*> matrices
 //clearOldOutput(filename): xóa nội dung file cũ
 //checkReadfile(bool isRead): kiểm tra đọc được file không
+//readFile(ifilename, ofilename): kiểm tra đọc được file không
+
 #include "SolveCheckMatrix.h"
+//readInputCheck(ifilename, ofilename, matrices, MatrixName): đọc file
+//solveProblem(ofilename, matrices, MatrixName, Name, operatorCheck): xử lý kiểm tra
 
 
 int main(int argc, char* argv[]){
@@ -52,36 +55,81 @@ int main(int argc, char* argv[]){
     //store Matrix
     vector<Matrix*> matrices;
     unordered_map<string, int> MatrixName;
+
 ////////////////////////////////////////////////////////////////////////
     //store file input
     string initFile = "insert-n-print-data/initMatrix.inp";
-    string questionCheck = "check_matrix/want_to_check.inp";
     //store file output
     string printMatrix = "insert-n-print-data/printMatrix.out";
-    string resultCheck = "check_matrix/result_of_check.out";
     //check input
     bool isRead = readFileInit(initFile, matrices, MatrixName);
     checkReadfile(isRead);
-         isRead = readFile(questionCheck, resultCheck);
-    checkReadfile(isRead);
     //Clear old output
-    clearOldOutput(resultCheck);
     clearOldOutput(printMatrix);
-                //Success check input & output
-                //HCMUT 11:54 22/01/2024
-
     //Test Input (Done 11:56 22/01/2024)
     for (int i = 0; i < matrices.size(); i++) {
         matrices[i]->getMatrix(printMatrix);
     }
+                                        //Success check input & output
+                                        //HCMUT 11:54 22/01/2024
 ////////////////////////////////////////////////////////////////////// (HCMUT 12:19 23/01/2024)
+    //store file input
+    string questionCheck = "check_matrix/want_to_check.inp";
+    //store file output
+    string resultCheck = "check_matrix/result_of_check.out";
+    //check input
+    isRead = readFile(questionCheck, resultCheck);
+    checkReadfile(isRead);
+    //Clear old output
+    clearOldOutput(resultCheck);
+    //Test Check (Done 12:19 23/01/2024)
     readInputCheck(questionCheck, 
                    resultCheck, 
                    matrices, 
                    MatrixName);
+                                        //Success check input & output
+                                        //HCMUT 12:19 23/01/2024    
+////////////////////////////////////////////////////////////////////// (HCMUT 15:28 23/01/2024)
 
-    Matrix* A = new Matrix("Ans",3,3,{{1,2,3},{4,5,6},{7,8,9}});
-    *A = matrices[0]->operator+(*matrices[1]);
+    //store file input
+    string inputSolveOneMatrix = "solve-one-matrix/input-matrix-need-to-solve.inp";
+    //store file output
+    string outputOneMatrixSolved = "solve-one-matrix/matrix-solved.out";
+    //check input
+    isRead = readFile(inputSolveOneMatrix, outputOneMatrixSolved);
+    checkReadfile(isRead);
+    //Clear old output
+    clearOldOutput(outputOneMatrixSolved);
+                                        //Success check input & output
+                                        //HCMUT 15:35 23/01/2024
+
+////////////////////////////////////////////////////////////////////// (HCMUT 15:35 23/01/2024)
+    Matrix* A = new Matrix("New",0,0,{});
+    *A = *matrices[0];
+    *A = A->transpose();
     A->getMatrix(printMatrix);
+
+    *A = A->operator*(2);
+    A->getMatrix(printMatrix);
+
+    *A = A->operator*(*A);
+    A->getMatrix(printMatrix);
+
+    *A = A->identity(3);
+    A->getMatrix(printMatrix);
+    
+    matrices[0]->getMatrix(printMatrix);
+    *A = matrices[0]->operator*(*matrices[0]);
+    *A = A->operator^(2);
+    A->getMatrix(printMatrix);
+                                               //HCMUT 16:03 23/01/2024
+                                               //Check Operator Done
+////////////////////////////////////////////////////////////////////// (HCMUT 16:03 23/01/2024)
+
+
+
+
+
+
     return 0;
 }
