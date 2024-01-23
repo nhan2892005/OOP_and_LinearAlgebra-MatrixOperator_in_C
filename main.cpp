@@ -72,9 +72,6 @@ int main(int argc, char* argv[]){
 
     //Test Input (Done 11:56 22/01/2024)
     for (int i = 0; i < matrices.size(); i++) {
-        matrices[i]->getName(printMatrix);
-        matrices[i]->getRow(printMatrix);
-        matrices[i]->getCol(printMatrix);
         matrices[i]->getMatrix(printMatrix);
     }
 ////////////////////////////////////////////////////////////////////// (HCMUT 12:19 23/01/2024)
@@ -82,5 +79,9 @@ int main(int argc, char* argv[]){
                    resultCheck, 
                    matrices, 
                    MatrixName);
-      return 0;
+
+    Matrix* A = new Matrix("Ans",3,3,{{1,2,3},{4,5,6},{7,8,9}});
+    *A = matrices[0]->operator+(*matrices[1]);
+    A->getMatrix(printMatrix);
+    return 0;
 }

@@ -39,6 +39,9 @@ class Matrix
         void getMatrix(string fileName)
         {
             ofstream file(fileName, ios::app);
+            getName(fileName);
+            getRow(fileName);
+            getCol(fileName);
             for (int i = 0; i < row; i++)
             {
                 file << "    ";
@@ -224,7 +227,7 @@ class Matrix
                 return false;
             }
         }
-        //check if the matrix is involutory (ma trận đối ngịch A^2 = I)
+        //check if the matrix is involutory (ma trận A^2 = I)
         bool isInvolutory()
         {
             if (isSquare())
