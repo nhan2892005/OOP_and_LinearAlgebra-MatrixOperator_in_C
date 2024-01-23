@@ -24,10 +24,10 @@
     isUpperTriangular: kiểm tra ma trận tam giác trên (bool isUpperTriangular())
     isLowerTriangular: kiểm tra ma trận tam giác dưới (bool isLowerTriangular())
     *isTriangular: kiểm tra ma trận tam giác (bool isTriangular())
-    isOrthogonal: kiểm tra ma trận trực giao (bool isOrthogonal())
-    isInvolutory: kiểm tra ma trận bậc hai (bool isInvolutory())
-    isNilpotent: kiểm tra ma trận bậc ba (bool isNilpotent())
-    isIdempotent: kiểm tra ma trận bậc bốn (bool isIdempotent())
+    isOrthogonal: kiểm tra ma trận trực giao A^T=A^-1 (bool isOrthogonal())
+    isInvolutory: kiểm tra ma trận A^2=I (bool isInvolutory())
+    isNilpotent: kiểm tra ma trận luỹ linh (bool isNilpotent())
+    isIdempotent: kiểm tra ma trận luỹ đẳng (bool isIdempotent())
     transpose: chuyển vị ma trận (Matrix transpose())
     trace: tính đường chéo chính (double trace())
     operator +: cộng hai ma trận (Matrix operator +())
@@ -82,5 +82,5 @@ int main(int argc, char* argv[]){
                    resultCheck, 
                    matrices, 
                    MatrixName);
-   return 0;
+      return 0;
 }
