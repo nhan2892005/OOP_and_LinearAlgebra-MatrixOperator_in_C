@@ -28,6 +28,21 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
   * Notes: Có thể nhập nhiều phép kiểm tra trong cùng 1 file
   * Ví dụ: Hello isSquare
     * Tôi sẽ cung cấp các hàm sau đây:
+      | Hàm               | Mô tả                                        | Nguyên mẫu                          |
+|-------------------|----------------------------------------------|------------------------------------|
+| `isSquare()`      | Kiểm tra ma trận vuông                       | `bool isSquare()`                  |
+| `isDiagonal()`    | Kiểm tra ma trận chéo                         | `bool isDiagonal()`                |
+| `isIdentity()`    | Kiểm tra ma trận đơn vị                      | `bool isIdentity()`                |
+| `isSymmetric()`   | Kiểm tra ma trận đối xứng                    | `bool isSymmetric()`               |
+| `isSkewSymmetric()` | Kiểm tra ma trận chéo phụ                   | `bool isSkewSymmetric()`           |
+| `isUpperTriangular()` | Kiểm tra ma trận tam giác trên             | `bool isUpperTriangular()`         |
+| `isLowerTriangular()` | Kiểm tra ma trận tam giác dưới             | `bool isLowerTriangular()`         |
+| `isTriangular()`  | Kiểm tra ma trận tam giác (tổng quát)        | `bool isTriangular()`              |
+| `isOrthogonal()`  | Kiểm tra ma trận trực giao                   | `bool isOrthogonal()`              |
+| `isInvolutory()`  | Kiểm tra ma trận A^2=I                    | `bool isInvolutory()`              |
+| `isNilpotent()`   | Kiểm tra ma trận luỹ linh                      | `bool isNilpotent()`               |
+| `isIdempotent()`  | Kiểm tra ma trận luỹ đẳng                    | `bool isIdempotent()`              |
+
       
 ## Quá trình tiếp cận dự án
 Sau quá trình tiếp cận với môn Đại số tuyến tính và Kỹ thật lập trình ở trường Đại học Bách Khoa Tp.HCM, tôi đã nghĩ tới dự án này như một cách để hiểu rõ hơn về 2 môn học này.
