@@ -372,12 +372,12 @@ class Matrix
                         temp[i][j] = matrix[i][j] + m.matrix[i][j];
                     }
                 }
-                return Matrix(nameofMatrix, row, col, temp);
+                return Matrix("Ans", row, col, temp);
             }
             else
             {
                 cout << "Error!" << endl;
-                return Matrix(nameofMatrix, 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
             }
         }
 
@@ -392,7 +392,7 @@ class Matrix
                     temp[i][j] = matrix[i][j] * n;
                 }
             }
-            return Matrix(nameofMatrix, row, col, temp);
+            return Matrix("Ans", row, col, temp);
         }
 
         //Subtraction of two matrices (Trừ hai ma trận)
@@ -410,12 +410,12 @@ class Matrix
                         temp[i][j] = matrix[i][j] - m.matrix[i][j];
                     }
                 }
-                return Matrix(nameofMatrix, row, col, temp);
+                return Matrix("Ans", row, col, temp);
             }
             else
             {
                 cout << "Error!" << endl;
-                return Matrix(nameofMatrix, 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
             }
         }
 
@@ -437,12 +437,12 @@ class Matrix
                         }
                     }
                 }
-                return Matrix(nameofMatrix, row, m.col, temp);
+                return Matrix("Ans", row, m.col, temp);
             }
             else
             {
                 cout << "Error!" << endl;
-                return Matrix(nameofMatrix, 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
             }
         }
 
