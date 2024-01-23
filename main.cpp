@@ -78,7 +78,9 @@ int main(int argc, char* argv[]){
         matrices[i]->getMatrix(printMatrix);
     }
 ////////////////////////////////////////////////////////////////////// (HCMUT 12:19 23/01/2024)
-    
-
-
+    readInputCheck(questionCheck, 
+                   resultCheck, 
+                   matrices, 
+                   MatrixName);
+   return 0;
 }
