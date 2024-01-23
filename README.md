@@ -2,6 +2,7 @@
 
 ## Giới thiệu về dự án
 Đây là dự án dành cho người mới bắt đầu học tập và nghiên cứu về Khoa học Máy tính
+
 Dự án giúp cho sinh viên tiếp cận với các quản lý source code, làm việc với file header C, làm quen với thao tác xuất nhập trên file, đưa ra giải pháp và thuật toán xử lý ma trận
 
 Dự án sẽ bao gồm các phép:
