@@ -72,4 +72,8 @@ void readInputCheck(string ifilename,
         return;
     }
 }
+
+// HCMUT
+// Check Done 11:41 23/01/2024
+
 #endif /*SOLVECHECKMATRIX_H*/

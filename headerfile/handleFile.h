@@ -62,4 +62,7 @@ int readFile(string ifilename, string ofilename){
     else return 0;
 }
 
+// HCMUT
+// Check Done 11:41 23/01/2024
+
 #endif /* handleFile_h */

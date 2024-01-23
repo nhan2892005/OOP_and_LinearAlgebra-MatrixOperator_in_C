@@ -504,7 +504,6 @@ class Matrix
         //Transform to echelon form (Chuyển về dạng bậc thang)
         Matrix transformEchelon()
         {
-            cout << "Echelon matrix of " << nameofMatrix << endl;
             vector<vector<double>> temp(row, vector<double>(col, 0));
             temp = matrix;
     
@@ -519,29 +518,11 @@ class Matrix
                 }
                 if (i != k){
                     swap(temp[i], temp[k]);
-                    cout << "h" << i + 1 << " <-> " << "h" << k + 1 << endl;
                 }
                 double divNoChange = temp[k][k];
                 for (int i = k; i < row; i++){
                     if (i !=  k && temp[i][k] != 0){
                         double divChange = temp[i][k];
-                        if ((divChange/divNoChange) - static_cast<int>((divChange/divNoChange)) == 0)
-                        {
-                            cout << "h" << i + 1 << " = " 
-                                 << "h" << i + 1 << " - " << static_cast<int>((divChange/divNoChange)) << " * " 
-                                 << "h" << k + 1 << endl;
-                        }
-                        else
-                        {
-                            cout << "h" << i + 1 << " = " 
-                                 << "h" << i + 1 << " - " 
-                                 << fixed << setprecision(2) 
-                                 << static_cast<int>((divChange/divNoChange)) << " * " 
-                                 << "h" << k + 1 << endl;
-                        }
-                        cout << "h" << i + 1 << " = " 
-                                 << "h" << i + 1 << " - " << divChange/divNoChange << " * " 
-                                 << "h" << k + 1 << endl;
                         for (int j = 0; j < col; j++){
                             temp[i][j] = temp[i][j] - temp[k][j] * (divChange/divNoChange);
                         }
@@ -593,5 +574,8 @@ class Matrix
             return det() != 0;
         }
 };
+
+// HCMUT
+// Check Done 11:41 23/01/2024
 
 #endif /* process_h */
