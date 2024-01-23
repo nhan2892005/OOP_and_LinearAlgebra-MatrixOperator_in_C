@@ -17,9 +17,9 @@ class Matrix
         string nameofMatrix;
         int row;
         int col;
-        vector<vector<int>> matrix;
+        vector<vector<double>> matrix;
     public:
-        Matrix(string name, int r, int c, vector<vector<int>> m)
+        Matrix(string name, int r, int c, vector<vector<double>> m)
             : nameofMatrix(name), row(r), col(c), matrix(m) {}
         void getName(string fileName)
         {
@@ -47,7 +47,14 @@ class Matrix
                 file << "    ";
                 for (int j = 0; j < col; j++)
                 {
-                    file << setw(5) << matrix[i][j];
+                    if (matrix[i][j] - static_cast<int>(matrix[i][j]) == 0)
+                    {
+                        file << setw(8) << static_cast<int>(matrix[i][j]);
+                    }
+                    else
+                    {
+                        file << fixed << setprecision(2) << setw(8) << matrix[i][j];
+                    }
                 }
                 file << endl;
             }
@@ -258,7 +265,7 @@ class Matrix
         {
             if (isSquare())
             {
-                vector<vector<int>> temp(row, vector<int>(col, 0));
+                vector<vector<double>> temp(row, vector<double>(col, 0));
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
@@ -291,7 +298,7 @@ class Matrix
         {
             if (isSquare())
             {
-                vector<vector<int>> temp(row, vector<int>(col, 0));
+                vector<vector<double>> temp(row, vector<double>(col, 0));
                 for (int i = 0; i < row; i++)
                 {
                     temp[i][i] = 1;
@@ -328,7 +335,7 @@ class Matrix
         //Transpose of a matrix (ma trận chuyển vị A^T)
         Matrix transpose()
         {
-            vector<vector<int>> temp(col, vector<int>(row, 0));
+            vector<vector<double>> temp(col, vector<double>(row, 0));
             for (int i = 0; i < col; i++)
             {
                 for (int j = 0; j < row; j++)
@@ -336,7 +343,7 @@ class Matrix
                     temp[i][j] = matrix[j][i];
                 }
             }
-            return Matrix(nameofMatrix, col, row, temp);
+            return Matrix("Transpose of " + nameofMatrix, col, row, temp);
         }
         //Trace of a matrix (Vết của ma trận)
         double trace()
@@ -364,7 +371,7 @@ class Matrix
         {
             if ((row == m.row) && (col == m.col))
             {
-                vector<vector<int>> temp(row, vector<int>(col, 0));
+                vector<vector<double>> temp(row, vector<double>(col, 0));
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
@@ -377,14 +384,14 @@ class Matrix
             else
             {
                 cout << "Error!" << endl;
-                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
             }
         }
 
         //Multiplication of a matrix with a number (Nhân ma trận với một số)
-        Matrix operator*(const int & n)
+        Matrix operator*(const double & n)
         {
-            vector<vector<int>> temp(row, vector<int>(col, 0));
+            vector<vector<double>> temp(row, vector<double>(col, 0));
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < col; j++)
@@ -402,7 +409,7 @@ class Matrix
         {
             if ((row == m.row) && (col == m.col))
             {
-                vector<vector<int>> temp(row, vector<int>(col, 0));
+                vector<vector<double>> temp(row, vector<double>(col, 0));
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
@@ -415,7 +422,7 @@ class Matrix
             else
             {
                 cout << "Error!" << endl;
-                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
             }
         }
 
@@ -426,7 +433,7 @@ class Matrix
         {
             if (col == m.row)
             {
-                vector<vector<int>> temp(row, vector<int>(m.col, 0));
+                vector<vector<double>> temp(row, vector<double>(m.col, 0));
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < m.col; j++)
@@ -442,7 +449,7 @@ class Matrix
             else
             {
                 cout << "Error!" << endl;
-                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
             }
         }
 
@@ -480,13 +487,13 @@ class Matrix
             else
             {
                 cout << "Error!" << endl;
-                return Matrix("Ans", 0, 0, vector<vector<int>>(0, vector<int>(0, 0)));
+                return Matrix("Ans", 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
             }
         }
         //Create Identity matrix (Tạo ma trận đơn vị)
         Matrix identity(int n)
         {
-            vector<vector<int>> temp(n, vector<int>(n, 0));
+            vector<vector<double>> temp(n, vector<double>(n, 0));
             for (int i = 0; i < n; i++)
             {
                 temp[i][i] = 1;
@@ -495,51 +502,95 @@ class Matrix
         }
 
         //Transform to echelon form (Chuyển về dạng bậc thang)
-        Matrix transformEchelon(string ofilename)
+        Matrix transformEchelon()
         {
-            ofstream file(ofilename, ios::app);
-            file << "Echelon form of " << nameofMatrix << endl;
-            vector<vector<int>> temp(row, vector<int>(col, 0));
+            cout << "Echelon matrix of " << nameofMatrix << endl;
+            vector<vector<double>> temp(row, vector<double>(col, 0));
             temp = matrix;
-            int i = 0;
-            int j = 0;
-            while ((i < row) && (j < col))
-            {
-                if (temp[i][j] == 0)
-                {
-                    int k = i + 1;
-                    while ((k < row) && (temp[k][j] == 0))
-                    {
-                        k++;
-                    }
-                    if (k < row)
-                    {
-                        for (int l = 0; l < col; l++)
+    
+            for (int k = 0; k < row; k++){
+                // Find element != 0
+                int i = k;
+                while (i < row && temp[i][k] == 0){
+                    i++;
+                }
+                if (i == row){
+                    break;
+                }
+                if (i != k){
+                    swap(temp[i], temp[k]);
+                    cout << "h" << i + 1 << " <-> " << "h" << k + 1 << endl;
+                }
+                double divNoChange = temp[k][k];
+                for (int i = k; i < row; i++){
+                    if (i !=  k && temp[i][k] != 0){
+                        double divChange = temp[i][k];
+                        if ((divChange/divNoChange) - static_cast<int>((divChange/divNoChange)) == 0)
                         {
-                            swap(temp[i][l], temp[k][l]);
-                            file << "Step: " << i + 1 << " <-> " << k + 1 << endl;
+                            cout << "h" << i + 1 << " = " 
+                                 << "h" << i + 1 << " - " << static_cast<int>((divChange/divNoChange)) << " * " 
+                                 << "h" << k + 1 << endl;
+                        }
+                        else
+                        {
+                            cout << "h" << i + 1 << " = " 
+                                 << "h" << i + 1 << " - " 
+                                 << fixed << setprecision(2) 
+                                 << static_cast<int>((divChange/divNoChange)) << " * " 
+                                 << "h" << k + 1 << endl;
+                        }
+                        cout << "h" << i + 1 << " = " 
+                                 << "h" << i + 1 << " - " << divChange/divNoChange << " * " 
+                                 << "h" << k + 1 << endl;
+                        for (int j = 0; j < col; j++){
+                            temp[i][j] = temp[i][j] - temp[k][j] * (divChange/divNoChange);
                         }
                     }
-                    else
-                    {
-                        j++;
-                        continue;
-                    }
-                }
-                for (int k = i + 1; k < row; k++)
-                {
-                    int temp1 = temp[k][j];
-                    int temp2 = temp[i][j];
-                    for (int l = 0; l < col; l++)
-                    {
-                        temp[k][l] = temp[k][l] * temp2 - temp[i][l] * temp1;
-                        file << "Step " << "h"<<k + 1 << " - " << temp1 << "/" << temp2 << " * " << "h"<<i + 1 << endl;
-                    }
-                }
-                i++;
-                j++;
+                } 
             }
             return Matrix("Echelon form of " + nameofMatrix, row, col, temp);
+        }
+        double det() {
+            if (isSquare()) {
+                Matrix temp = transformEchelon();
+
+                // Check for division by zero
+                for (int i = 0; i < row; i++) {
+                    if (temp.matrix[i][i] == 0) {
+                        return 0;  
+                    }
+                }
+
+                double determinant = 1;
+                for (int i = 0; i < row; i++) {
+                    determinant *= temp.matrix[i][i];
+                }
+                return determinant;
+            } else {
+                cout << nameofMatrix << " is not square matrix" << endl;
+                return 0; 
+            }
+        }
+
+        int rank() {
+            Matrix temp = transformEchelon();
+            int rank = 0;
+            for (int i = 0; i < row; i++) {
+                bool isZero = true;
+                for (int j = 0; j < col; j++) {
+                    if (temp.matrix[i][j] != 0) {
+                        isZero = false;
+                        break;
+                    }
+                }
+                if (!isZero) {
+                    rank++;
+                }
+            }
+            return rank;
+        }
+        bool isInvertible() {
+            return det() != 0;
         }
 };
 

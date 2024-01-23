@@ -1,7 +1,7 @@
 /*
     *Solve Matrix
 
-    *HO CHI MINH CITY UNIVERSTY OF TECHNOLOGY
+    *HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY
     *FACULTY OF COMPUTER SCIENCE AND ENGINEERING
     *Author: 
         NGUYEN PHUC NHAN (Founder)
@@ -29,12 +29,12 @@
     isIdempotent: kiểm tra ma trận luỹ đẳng (bool isIdempotent())
 //Các hàm tính toán ma trận
     trace: tính đường chéo chính (double trace())
-    operator +: cộng hai ma trận (Matrix operator +())
-    operator -: trừ hai ma trận (Matrix operator -())
-    operator *: nhân hai ma trận (Matrix operator *())
-    operator *: nhân ma trận với một số thực (Matrix operator *())
-    operator =: gán ma trận (Matrix operator =())
-    operator ^: lũy thừa ma trận (Matrix operator ^())
+    operator+: cộng hai ma trận (Matrix operator +())
+    operator-: trừ hai ma trận (Matrix operator -())
+    operator*(n): nhân hai ma trận (Matrix operator *())
+    operator*(Matrix): nhân ma trận với một số thực (Matrix operator *())
+    operator=: gán ma trận (Matrix operator =())
+    operator^: lũy thừa ma trận (Matrix operator ^())
     identity: tạo ma trận đơn vị (Matrix identity())
     **** Chưa xử lý input ****
 */
@@ -49,6 +49,8 @@
 //readInputCheck(ifilename, ofilename, matrices, MatrixName): đọc file
 //solveProblem(ofilename, matrices, MatrixName, Name, operatorCheck): xử lý kiểm tra
 
+#include "headerfile/SolveOneMatrix.h"
+//HCMUT 16:58 23/01/2024
 
 int main(int argc, char* argv[]){
     
@@ -87,7 +89,7 @@ int main(int argc, char* argv[]){
                    resultCheck, 
                    matrices, 
                    MatrixName);
-                                        //Success check input & output
+                                        //Success check 
                                         //HCMUT 12:19 23/01/2024    
 ////////////////////////////////////////////////////////////////////// (HCMUT 15:28 23/01/2024)
 
@@ -100,21 +102,13 @@ int main(int argc, char* argv[]){
     checkReadfile(isRead);
     //Clear old output
     clearOldOutput(outputOneMatrixSolved);
-                                        //Success check input & output
-                                        //HCMUT 15:35 23/01/2024
+    readInputSolveOne(  inputSolveOneMatrix, 
+                        outputOneMatrixSolved, 
+                        matrices, 
+                        MatrixName);
+                                        //Success check 
+                                        //HCMUT 23:21 23/01/2024
 
-////////////////////////////////////////////////////////////////////// (HCMUT 15:35 23/01/2024)
-    Matrix* A = new Matrix("New",0,0,{});
-    *A = matrices[0]->transformEchelon(outputOneMatrixSolved);
-    A->getMatrix(outputOneMatrixSolved);
-                                               //HCMUT 16:03 23/01/2024
-                                               //Check Operator Done
-////////////////////////////////////////////////////////////////////// (HCMUT 16:03 23/01/2024)
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////// (HCMUT 23:22 23/01/2024)
     return 0;
 }

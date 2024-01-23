@@ -24,7 +24,7 @@ int readFileInit(string filename,
             int row, col;
             myFile >> matrixName >> row >> col;
             MatrixName[matrixName] = count++;
-            vector<vector<int>> matrix(row, vector<int>(col));
+            vector<vector<double>> matrix(row, vector<double>(col));
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++) {
                     myFile >> matrix[i][j];

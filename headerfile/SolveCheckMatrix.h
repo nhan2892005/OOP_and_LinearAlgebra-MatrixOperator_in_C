@@ -17,14 +17,15 @@ unordered_map<string, function<bool(Matrix*)>> checkFunctions = {
     {"isInvolutory",      [](Matrix* matrix) { return matrix->isInvolutory();       }},
     {"isNilpotent",       [](Matrix* matrix) { return matrix->isNilpotent();        }},
     {"isIdempotent",      [](Matrix* matrix) { return matrix->isIdempotent();       }},
-    {"isTriangular",      [](Matrix* matrix) { return matrix->isTriangular();       }}
+    {"isTriangular",      [](Matrix* matrix) { return matrix->isTriangular();       }},
+    {"isInvertible",      [](Matrix* matrix) { return matrix->isInvertible();       }} 
 };
 
-void p<string, int> MatrixName,
-                  string Name,
-                  string opersolveProblem(string ofilename,
+void solveProblem(string ofilename,
                   vector<Matrix*> matrices,
-                  unordered_maatorCheck){
+                  unordered_map<string, int> MatrixName,
+                  string Name,
+                  string operatorCheck){
     fstream resultCheck(ofilename, ios::app);
     if (resultCheck.is_open())
     {
