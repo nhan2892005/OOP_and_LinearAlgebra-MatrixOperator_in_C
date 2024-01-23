@@ -10,39 +10,3 @@ Column:3
         1    0    0
         2    6    0
         3   -1    0
-Name: Hello
-Rows: 3
-Column:3
-       -2    0    5
-        4   -3    0
-        1    2    1
-Name: Ans
-Rows: 3
-Column:3
-       -4    0   10
-        8   -6    0
-        2    4    2
-Name: Ans
-Rows: 3
-Column:3
-       36   40  -20
-      -80   36   80
-       28  -16   24
-Name: Identity
-Rows: 3
-Column:3
-        1    0    0
-        0    1    0
-        0    0    1
-Name: Hello
-Rows: 3
-Column:3
-       -2    4    1
-        0   -3    2
-        5    0    1
-Name: Ans
-Rows: 3
-Column:3
-     -154 -220  185
-      200 -199   10
-      125  400  -79

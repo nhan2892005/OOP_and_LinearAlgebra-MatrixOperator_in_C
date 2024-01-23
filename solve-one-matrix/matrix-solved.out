@@ -1,0 +1,16 @@
+Echelon form of Hello
+Step 2 - 0/-2 * 1
+Step 2 - 0/-2 * 1
+Step 2 - 0/-2 * 1
+Step 3 - 5/-2 * 1
+Step 3 - 5/-2 * 1
+Step 3 - 5/-2 * 1
+Step 3 - -20/6 * 2
+Step 3 - -20/6 * 2
+Step 3 - -20/6 * 2
+Name: Echelon form of Hello
+Rows: 3
+Column:3
+       -2    4    1
+        0    6   -4
+        0    0 -122

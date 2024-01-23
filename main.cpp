@@ -105,23 +105,8 @@ int main(int argc, char* argv[]){
 
 ////////////////////////////////////////////////////////////////////// (HCMUT 15:35 23/01/2024)
     Matrix* A = new Matrix("New",0,0,{});
-    *A = *matrices[0];
-    *A = A->transpose();
-    A->getMatrix(printMatrix);
-
-    *A = A->operator*(2);
-    A->getMatrix(printMatrix);
-
-    *A = A->operator*(*A);
-    A->getMatrix(printMatrix);
-
-    *A = A->identity(3);
-    A->getMatrix(printMatrix);
-    
-    matrices[0]->getMatrix(printMatrix);
-    *A = matrices[0]->operator*(*matrices[0]);
-    *A = A->operator^(2);
-    A->getMatrix(printMatrix);
+    *A = matrices[0]->transformEchelon(outputOneMatrixSolved);
+    A->getMatrix(outputOneMatrixSolved);
                                                //HCMUT 16:03 23/01/2024
                                                //Check Operator Done
 ////////////////////////////////////////////////////////////////////// (HCMUT 16:03 23/01/2024)

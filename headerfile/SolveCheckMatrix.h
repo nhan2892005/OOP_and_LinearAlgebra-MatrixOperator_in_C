@@ -4,7 +4,7 @@
 #include "handleFile.h"
 #include <functional>
 
-std::unordered_map<std::string, function<bool(Matrix*)>> checkFunctions = {
+unordered_map<string, function<bool(Matrix*)>> checkFunctions = {
     {"isSquare",          [](Matrix* matrix) { return matrix->isSquare();           }},
     {"isDiagonal",        [](Matrix* matrix) { return matrix->isDiagonal();         }},
     {"isIdentity",        [](Matrix* matrix) { return matrix->isIdentity();         }},
@@ -20,11 +20,11 @@ std::unordered_map<std::string, function<bool(Matrix*)>> checkFunctions = {
     {"isTriangular",      [](Matrix* matrix) { return matrix->isTriangular();       }}
 };
 
-void solveProblem(string ofilename,
-                  vector<Matrix*> matrices,
-                  unordered_map<string, int> MatrixName,
+void p<string, int> MatrixName,
                   string Name,
-                  string operatorCheck){
+                  string opersolveProblem(string ofilename,
+                  vector<Matrix*> matrices,
+                  unordered_maatorCheck){
     fstream resultCheck(ofilename, ios::app);
     if (resultCheck.is_open())
     {

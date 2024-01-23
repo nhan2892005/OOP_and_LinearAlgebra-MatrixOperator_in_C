@@ -493,6 +493,54 @@ class Matrix
             }
             return Matrix("Identity", n, n, temp);
         }
+
+        //Transform to echelon form (Chuyển về dạng bậc thang)
+        Matrix transformEchelon(string ofilename)
+        {
+            ofstream file(ofilename, ios::app);
+            file << "Echelon form of " << nameofMatrix << endl;
+            vector<vector<int>> temp(row, vector<int>(col, 0));
+            temp = matrix;
+            int i = 0;
+            int j = 0;
+            while ((i < row) && (j < col))
+            {
+                if (temp[i][j] == 0)
+                {
+                    int k = i + 1;
+                    while ((k < row) && (temp[k][j] == 0))
+                    {
+                        k++;
+                    }
+                    if (k < row)
+                    {
+                        for (int l = 0; l < col; l++)
+                        {
+                            swap(temp[i][l], temp[k][l]);
+                            file << "Step: " << i + 1 << " <-> " << k + 1 << endl;
+                        }
+                    }
+                    else
+                    {
+                        j++;
+                        continue;
+                    }
+                }
+                for (int k = i + 1; k < row; k++)
+                {
+                    int temp1 = temp[k][j];
+                    int temp2 = temp[i][j];
+                    for (int l = 0; l < col; l++)
+                    {
+                        temp[k][l] = temp[k][l] * temp2 - temp[i][l] * temp1;
+                        file << "Step " << "h"<<k + 1 << " - " << temp1 << "/" << temp2 << " * " << "h"<<i + 1 << endl;
+                    }
+                }
+                i++;
+                j++;
+            }
+            return Matrix("Echelon form of " + nameofMatrix, row, col, temp);
+        }
 };
 
 #endif /* process_h */
