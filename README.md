@@ -30,18 +30,18 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
     * Tôi sẽ cung cấp các hàm sau đây:
       | Hàm                   | Mô tả                                        | Nguyên mẫu                         |
       |-----------------------|----------------------------------------------|------------------------------------|
-      | `isSquare()`          | Kiểm tra ma trận vuông                       | `bool isSquare()`                  |
-      | `isDiagonal()`        | Kiểm tra ma trận chéo                        | `bool isDiagonal()`                |
-      | `isIdentity()`        | Kiểm tra ma trận đơn vị                      | `bool isIdentity()`                |
-      | `isSymmetric()`       | Kiểm tra ma trận đối xứng                    | `bool isSymmetric()`               |
-      | `isSkewSymmetric()`   | Kiểm tra ma trận chéo phụ                    | `bool isSkewSymmetric()`           |
-      | `isUpperTriangular()` | Kiểm tra ma trận tam giác trên               | `bool isUpperTriangular()`         |
-      | `isLowerTriangular()` | Kiểm tra ma trận tam giác dưới               | `bool isLowerTriangular()`         |
-      | `isTriangular()`      | Kiểm tra ma trận tam giác (tổng quát)        | `bool isTriangular()`              |
-      | `isOrthogonal()`      | Kiểm tra ma trận trực giao                   | `bool isOrthogonal()`              |
-      | `isInvolutory()`      | Kiểm tra ma trận A^2=I                       | `bool isInvolutory()`              |
-      | `isNilpotent()`       | Kiểm tra ma trận luỹ linh                    | `bool isNilpotent()`               |
-      | `isIdempotent()`      | Kiểm tra ma trận luỹ đẳng                    | `bool isIdempotent()`              |
+      | `isSquare`          | Kiểm tra ma trận vuông                       | `bool isSquare()`                  |
+      | `isDiagonal`        | Kiểm tra ma trận chéo                        | `bool isDiagonal()`                |
+      | `isIdentity`        | Kiểm tra ma trận đơn vị                      | `bool isIdentity()`                |
+      | `isSymmetric`       | Kiểm tra ma trận đối xứng                    | `bool isSymmetric()`               |
+      | `isSkewSymmetric`   | Kiểm tra ma trận chéo phụ                    | `bool isSkewSymmetric()`           |
+      | `isUpperTriangular` | Kiểm tra ma trận tam giác trên               | `bool isUpperTriangular()`         |
+      | `isLowerTriangular` | Kiểm tra ma trận tam giác dưới               | `bool isLowerTriangular()`         |
+      | `isTriangular`      | Kiểm tra ma trận tam giác (tổng quát)        | `bool isTriangular()`              |
+      | `isOrthogonal`      | Kiểm tra ma trận trực giao                   | `bool isOrthogonal()`              |
+      | `isInvolutory`      | Kiểm tra ma trận A^2=I                       | `bool isInvolutory()`              |
+      | `isNilpotent`       | Kiểm tra ma trận luỹ linh                    | `bool isNilpotent()`               |
+      | `isIdempotent`      | Kiểm tra ma trận luỹ đẳng                    | `bool isIdempotent()`              |
 
       
 ## Quá trình tiếp cận dự án
