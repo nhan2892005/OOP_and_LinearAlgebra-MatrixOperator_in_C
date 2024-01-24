@@ -29,8 +29,11 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
 - Thực hiện các phép với 1 ma trận: Việc nhập các phép toán thực hiện trong file `check_matrix\question_matrix.inp` được định nghĩa như sau:
   + <Tên ma trận> <Tên phép toán>
   * Notes: Có thể nhập nhiều phép toán trong cùng 1 file
-  * Ví dụ: Hello isSquare
-           World det 
+  * Ví dụ:
+           Hello isSquare
+    
+           World det
+    
     * Tôi sẽ cung cấp các hàm sau đây:
       | Phép toán           | Mô tả                                        | Nguyên mẫu                         |
       |---------------------|----------------------------------------------|------------------------------------|
