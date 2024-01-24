@@ -71,7 +71,7 @@ Sau quá trình tiếp cận với môn Đại số tuyến tính và Kỹ thậ
 
 - Nếu đã đọc được ma trận từ ảnh, sẽ phát triển đọc các biểu thức ma trận từ ảnh
 
-- Xây dụng mô hình AI giải ma trận qua hình ảnh, text, dữ liệu nhập, ...
+- Xây dựng mô hình AI giải ma trận qua hình ảnh, text, dữ liệu nhập, ...
 
 Những hướng đi trên chỉ là kế hoạch trong một tương lai xa nào đó của tác giả.
 
