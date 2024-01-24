@@ -1,0 +1,20 @@
+det(Hello) = 61
+rank(World) = 3
+Name: Echelon form of Hello
+Rows: 3
+Column:3
+          -2       4       1
+           0      -3       2
+           0       0   10.17
+Name: Echelon form of World
+Rows: 3
+Column:3
+           1       2       3
+           0       2      -7
+           0       0  -26.50
+Name: Transpose of Hello
+Rows: 3
+Column:3
+          -2       0       5
+           4      -3       0
+           1       2       1
