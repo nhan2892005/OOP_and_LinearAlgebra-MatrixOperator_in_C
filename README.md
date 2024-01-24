@@ -26,9 +26,9 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
 
 - Xem ma trận đã nhập: Ma trận bạn đã nhập được lưu trữ tại `insert-n-print-data/printMatrix.out`
 
-- Thực hiện các phép với 1 ma trận: Việc nhập các phép kiểm tra thực hiện trong file `check_matrix\question_matrix.inp` được định nghĩa như sau:
+- Thực hiện các phép với 1 ma trận: Việc nhập các phép toán thực hiện trong file `check_matrix\question_matrix.inp` được định nghĩa như sau:
   + <Tên ma trận> <Tên phép toán>
-  * Notes: Có thể nhập nhiều phép kiểm tra trong cùng 1 file
+  * Notes: Có thể nhập nhiều phép kiểm toán trong cùng 1 file
   * Ví dụ: Hello isSquare
     * Tôi sẽ cung cấp các hàm sau đây:
       | Phép toán           | Mô tả                                        | Nguyên mẫu                         |
