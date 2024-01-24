@@ -53,7 +53,7 @@ class Matrix
                     }
                     else
                     {
-                        file << fixed << setprecision(2) << setw(8) << matrix[i][j];
+                        file << fixed << setprecision(3) << setw(8) << matrix[i][j];
                     }
                 }
                 file << endl;
@@ -572,6 +572,49 @@ class Matrix
         }
         bool isInvertible() {
             return det() != 0;
+        }
+        Matrix inverse() {
+            if (isInvertible()) {
+                vector<vector<double>> temp(row, vector<double>(col, 0));
+                temp = matrix;
+                Matrix I = identity(row);
+                //transform to echelon form both matrix and identity matrix
+                for (int k = 0; k < row; k++){
+                // Find element != 0
+                    int i = k;
+                    while (i < row && temp[i][k] == 0){
+                        i++;
+                    }
+                    if (i == row){
+                        break;
+                    }
+                    if (i != k){
+                        swap(temp[i], temp[k]);
+                        swap(I.matrix[i], I.matrix[k]);
+                    }
+                    double divNoChange = temp[k][k];
+                    for (int i = 0; i < row; i++){
+                        if (i !=  k && temp[i][k] != 0){
+                            double divChange = temp[i][k];
+                            for (int j = 0; j < col; j++){
+                                temp[i][j] = temp[i][j] * divNoChange - temp[k][j] * divChange;
+                                I.matrix[i][j] = I.matrix[i][j] * divNoChange - I.matrix[k][j] * divChange;
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i < row; i++){
+                    for (int j = 0; j < col; j++){
+                        if (temp[i][i] != 0 || temp[i][i] != 1){
+                                I.matrix[i][j] = I.matrix[i][j] / temp[i][i];
+                        }
+                    }
+                } 
+                return Matrix("Inverse of " + nameofMatrix, row, col, I.matrix);
+            } else {
+                cout << nameofMatrix << " is not invertible" << endl;
+                return Matrix("Inverse of " + nameofMatrix, 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
+            }
         }
 };
 

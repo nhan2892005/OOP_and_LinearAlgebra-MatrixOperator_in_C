@@ -27,8 +27,14 @@
     isInvolutory: kiểm tra ma trận A^2=I (bool isInvolutory())
     isNilpotent: kiểm tra ma trận luỹ linh (bool isNilpotent())
     isIdempotent: kiểm tra ma trận luỹ đẳng (bool isIdempotent())
+    isInvertible: kiểm tra ma trận khả nghịch (bool isInvertible())
 //Các hàm tính toán ma trận
     trace: tính đường chéo chính (double trace())
+    det: tính định thức (double det())
+    rank: tính hạng (int rank())
+    transformEchelon: biến đổi ma trận bậc thang (Matrix transformEchelon())
+    transpose: chuyển vị ma trận (Matrix transpose())
+//Các hàm toán tử
     operator+: cộng hai ma trận (Matrix operator +())
     operator-: trừ hai ma trận (Matrix operator -())
     operator*(n): nhân hai ma trận (Matrix operator *())
@@ -76,40 +82,31 @@ int main(int argc, char* argv[]){
                                         //HCMUT 11:54 22/01/2024
 ////////////////////////////////////////////////////////////////////// (HCMUT 12:19 23/01/2024)
     //store file input
-    string questionCheck = "check_matrix/want_to_check.inp";
+    string question = "check_matrix/question_matrix.inp";
     //store file output
-    string resultCheck = "check_matrix/result_of_check.out";
+    string result = "check_matrix/result_matrix.out";
     //check input
-    isRead = readFile(questionCheck, resultCheck);
+    isRead = readFile(question, result);
     checkReadfile(isRead);
     //Clear old output
-    clearOldOutput(resultCheck);
+    clearOldOutput(result);
     //Test Check (Done 12:19 23/01/2024)
-    readInputCheck(questionCheck, 
-                   resultCheck, 
+    readInputCheck(question, 
+                   result, 
                    matrices, 
                    MatrixName);
                                         //Success check 
                                         //HCMUT 12:19 23/01/2024    
 ////////////////////////////////////////////////////////////////////// (HCMUT 15:28 23/01/2024)
-
-    //store file input
-    string inputSolveOneMatrix = "solve-one-matrix/input-matrix-need-to-solve.inp";
-    //store file output
-    string outputOneMatrixSolved = "solve-one-matrix/matrix-solved.out";
-    //check input
-    isRead = readFile(inputSolveOneMatrix, outputOneMatrixSolved);
-    checkReadfile(isRead);
-    //Clear old output
-    clearOldOutput(outputOneMatrixSolved);
-    readInputSolveOne(  inputSolveOneMatrix, 
-                        outputOneMatrixSolved, 
+    readInputSolveOne(  question, 
+                        result, 
                         matrices, 
                         MatrixName);
                                         //Success check 
                                         //HCMUT 23:21 23/01/2024
 ////////////////////////////////////////////////////////////////////// (HCMUT 23:22 23/01/2024)
+   
 // HCMUT
-// Check Done 11:41 23/01/2024
+// Check Done 08:46 24/01/2024
     return 0;
 }

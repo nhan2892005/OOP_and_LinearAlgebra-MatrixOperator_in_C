@@ -32,6 +32,9 @@ void solveOne(    string ofilename,
             }else if (operatorSolve == "transpose"){
                 *matrix = matrix->transpose();
                 matrix->getMatrix(ofilename);
+            }else if (operatorSolve == "inverse"){
+                *matrix = matrix->inverse();
+                matrix->getMatrix(ofilename);
             }
             else{
                 return;
@@ -72,8 +75,5 @@ void readInputSolveOne( string ifilename,
 // HCMUT
 // Check Done 11:41 23/01/2024
 
-<<<<<<< HEAD
 #endif /*SOLVEONEMATRIX_H*/
-=======
-#endif /*SOLVEONEMATRIX_H*/
->>>>>>> refs/remotes/origin/main
+

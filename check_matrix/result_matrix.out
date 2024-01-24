@@ -1,0 +1,49 @@
+Hello is isSquare
+World is isSquare
+Hello is isInvertible
+det(Hello) = 61
+rank(World) = 3
+Name: Echelon form of Hello
+Rows: 3
+Column:3
+          -2       4       1
+           0      -3       2
+           0       0  10.167
+Name: Echelon form of World
+Rows: 3
+Column:3
+           1       2       3
+           0       2      -7
+           0       0 -26.500
+Name: Transpose of Hello
+Rows: 3
+Column:3
+          -2       0       5
+           4      -3       0
+           1       2       1
+det(Hello) = 61
+rank(World) = 3
+Name: Echelon form of Hello
+Rows: 3
+Column:3
+          -2       4       1
+           0      -3       2
+           0       0  10.167
+Name: Echelon form of World
+Rows: 3
+Column:3
+           1       2       3
+           0       2      -7
+           0       0 -26.500
+Name: Transpose of Hello
+Rows: 3
+Column:3
+          -2       0       5
+           4      -3       0
+           1       2       1
+Name: Inverse of Hello
+Rows: 3
+Column:3
+      -0.049  -0.066   0.180
+       0.164  -0.115   0.066
+       0.246   0.328   0.098

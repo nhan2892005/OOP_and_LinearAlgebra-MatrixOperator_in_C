@@ -35,11 +35,13 @@ void solveProblem(string ofilename,
             Matrix* matrix = matrices[index];
 
             auto checkFunction = checkFunctions.find(operatorCheck);
-            if (checkFunction != checkFunctions.end() && 
-                checkFunction->second(matrix)) {
-                resultCheck << Name << " is " << operatorCheck << endl;
+            if (checkFunction != checkFunctions.end()) 
+                if(checkFunction->second(matrix)) {
+                    resultCheck << Name << " is " << operatorCheck << endl;
+                } else {
+                    resultCheck << Name << " is not " << operatorCheck << endl;
             } else {
-                resultCheck << Name << " is not " << operatorCheck << endl;
+                return;
             }
         }
     }
@@ -76,8 +78,5 @@ void readInputCheck(string ifilename,
 // HCMUT
 // Check Done 11:41 23/01/2024
 
-<<<<<<< HEAD
 #endif /*SOLVECHECKMATRIX_H*/
-=======
-#endif /*SOLVECHECKMATRIX_H*/
->>>>>>> refs/remotes/origin/main
+
