@@ -72,4 +72,8 @@ void readInputSolveOne( string ifilename,
 // HCMUT
 // Check Done 11:41 23/01/2024
 
+<<<<<<< HEAD
 #endif /*SOLVEONEMATRIX_H*/
+=======
+#endif /*SOLVEONEMATRIX_H*/
+>>>>>>> refs/remotes/origin/main
