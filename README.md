@@ -32,7 +32,6 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
   * Ví dụ:
 
            Hello isSquare
-    
            World det
     
     * Tôi sẽ cung cấp các hàm sau đây:
