@@ -30,6 +30,7 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
   + <Tên ma trận> <Tên phép toán>
   * Notes: Có thể nhập nhiều phép toán trong cùng 1 file
   * Ví dụ:
+
            Hello isSquare
     
            World det
