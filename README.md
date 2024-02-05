@@ -58,14 +58,12 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
 
 - Xem kết quả sau khi chạy ở file `check_matrix\result_matrix.out`
 
-- Trong dự án, tôi đã định nghĩa các operator cho ma trận(+, -, nhân ma trận với 1 số, nhân ma trận với ma trận, luỹ thừa ma trận). Tuy nhiên để xử lý dữ liệu nhập từ phía người dùng tôi vẫn chưa nghĩ ra giải pháp.
+- Để thực hiện tính toán với biểu thức trên ma trận, sau khi biên dịch và chạy chương trình, người dùng nhập biểu thức ở Terminal và quan sát kết quả ở file `result_expression_matrix.out`.
 
 ## Quá trình tiếp cận dự án
 Sau quá trình tiếp cận với môn Đại số tuyến tính và Kỹ thật lập trình ở trường Đại học Bách Khoa Tp.HCM, tôi đã nghĩ tới dự án này như một cách để hiểu rõ hơn về 2 môn học này.
 
 ## Hướng đi tiếp theo của dự án
-
-- Xử lý các biểu thức ma trận phức tạp (VD: 3*A+A*(B^T)-(C^-1)+(A^2)...)
 
 - Dùng các phương pháp xử lý ảnh, ML/DL để đọc ma trận từ ảnh.
 
