@@ -91,12 +91,15 @@ Những hướng đi trên chỉ là kế hoạch trong một tương lai xa nà
 
 ## Tài liệu tham khảo
 
-`Giáo trình Đại số tuyến tính - Trường Đại học Bách Khoa-ĐHQG TPHCM - Thầy Đặng Văn Vinh`
-`Đại số tuyến tính - Thầy Nguyễn Hữu Hiệp`
-`[Data Structures and Algorithms in C++ - Adam Drozdek](https://itlectures.ro/wp-content/uploads/2016/04/AdamDrozdek__DataStructures_and_Algorithms_in_C_4Ed.pdf)`
-`[Reverse Polish Notation]([https://mathworld.wolfram.com/ReversePolishNotation.html#:~:text=Reverse%20Polish%20notation%20(RPN)%20is,the%20Polish%20mathematician%20Jan%20Lucasiewicz.](https://www-stone.ch.cam.ac.uk/documentation/rrf/rpn.html))`
-`[Evaluate the Value of an Arithmetic Expression in Reverse Polish Notation](https://www.geeksforgeeks.org/evaluate-the-value-of-an-arithmetic-expression-in-reverse-polish-notation-in-java/)`
+Giáo trình Đại số tuyến tính - Trường Đại học Bách Khoa-ĐHQG TPHCM - Thầy Đặng Văn Vinh
 
+Đại số tuyến tính - Thầy Nguyễn Hữu Hiệp
+
+[Data Structures and Algorithms in C++ - Adam Drozdek](https://itlectures.ro/wp-content/uploads/2016/04/AdamDrozdek__DataStructures_and_Algorithms_in_C_4Ed.pdf)
+
+[Reverse Polish Notation]([https://mathworld.wolfram.com/ReversePolishNotation.html#:~:text=Reverse%20Polish%20notation%20(RPN)%20is,the%20Polish%20mathematician%20Jan%20Lucasiewicz.](https://www-stone.ch.cam.ac.uk/documentation/rrf/rpn.html))
+
+[Evaluate the Value of an Arithmetic Expression in Reverse Polish Notation](https://www.geeksforgeeks.org/evaluate-the-value-of-an-arithmetic-expression-in-reverse-polish-notation-in-java/)
 
 Nhân
 `nhan.nguyen2005phuyen@hcmut.edu.vn`
