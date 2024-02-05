@@ -15,7 +15,7 @@ Column:3
            1       2       3
            0       2      -7
            0       0 -26.500
-Name: Transpose of Hello
+Name: Hellotranspose
 Rows: 3
 Column:3
           -2       0       5
@@ -35,7 +35,7 @@ Column:3
            1       2       3
            0       2      -7
            0       0 -26.500
-Name: Transpose of Hello
+Name: Hellotranspose
 Rows: 3
 Column:3
           -2       0       5
