@@ -60,6 +60,22 @@ Với các hàm đã được định nghĩa trong source code, người dùng s
 
 - Để thực hiện tính toán với biểu thức trên ma trận, sau khi biên dịch và chạy chương trình, người dùng nhập biểu thức ở Terminal và quan sát kết quả ở file `result_expression_matrix.out`.
 
+- Việc nhập biểu thức có một số ràng buộc sau đây:
+    + Nếu là biểu thức có luỹ thừa, số mũ phải được đặt trong cặp dấu `{}`
+          VD:
+      
+                Hello^{T}+Hello
+                A^{-1} * B
+      
+    + Các biến trong biểu thức phải được định nghĩa trước
+          VD: Tôi đã định nghĩa trước 2 ma trận Hello và World
+
+                Hello + World
+
+    + Một số trường hợp khác có thể là lỗi hoặc tính năng, tuy nhiên sẽ không thường xuyên gặp trong quá trình giải ma trận, mong các bạn bỏ qua
+ 
+- Trong file ParserExpression.md, tôi sẽ chia sẻ về cách xử lý các biểu thức đầu vào. Mong các bạn đón xem.
+  
 ## Quá trình tiếp cận dự án
 Sau quá trình tiếp cận với môn Đại số tuyến tính và Kỹ thật lập trình ở trường Đại học Bách Khoa Tp.HCM, tôi đã nghĩ tới dự án này như một cách để hiểu rõ hơn về 2 môn học này.
 
@@ -73,8 +89,13 @@ Sau quá trình tiếp cận với môn Đại số tuyến tính và Kỹ thậ
 
 Những hướng đi trên chỉ là kế hoạch trong một tương lai xa nào đó của tác giả.
 
-## Kết thúc
-Rất mong mọi người sẽ thấy hứng thú và trở thành đồng tác giả của dự án.
+## Tài liệu tham khảo
+
+`Giáo trình Đại số tuyến tính - Trường Đại học Bách Khoa-ĐHQG TPHCM - Thầy Đặng Văn Vinh`
+`Đại số tuyến tính - Thầy Nguyễn Hữu Hiệp`
+`[Data Structures and Algorithms in C++ - Adam Drozdek](https://itlectures.ro/wp-content/uploads/2016/04/AdamDrozdek__DataStructures_and_Algorithms_in_C_4Ed.pdf)`
+`[Reverse Polish Notation]([https://mathworld.wolfram.com/ReversePolishNotation.html#:~:text=Reverse%20Polish%20notation%20(RPN)%20is,the%20Polish%20mathematician%20Jan%20Lucasiewicz.](https://www-stone.ch.cam.ac.uk/documentation/rrf/rpn.html))`
+`[Evaluate the Value of an Arithmetic Expression in Reverse Polish Notation](https://www.geeksforgeeks.org/evaluate-the-value-of-an-arithmetic-expression-in-reverse-polish-notation-in-java/)`
 
 
 Nhân
