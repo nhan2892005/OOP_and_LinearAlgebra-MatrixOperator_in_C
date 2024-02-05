@@ -58,12 +58,12 @@
 #include "headerfile/SolveOneMatrix.h"
 //HCMUT 16:58 23/01/2024
 
+#include "headerfile/Parser.h"
 int main(int argc, char* argv[]){
     
     //store Matrix
     vector<Matrix*> matrices;
     unordered_map<string, int> MatrixName;
-
 ////////////////////////////////////////////////////////////////////////
     //store file input
     string initFile = "insert-n-print-data/initMatrix.inp";
@@ -105,8 +105,36 @@ int main(int argc, char* argv[]){
                                         //Success check 
                                         //HCMUT 23:21 23/01/2024
 ////////////////////////////////////////////////////////////////////// (HCMUT 23:22 23/01/2024)
-   
+    //store file output
+    std::string result_exp = "result_expression_matrix.out";
+    ofstream r(result_exp, ios::app);
+    if (r.is_open())
+    {
+        isRead = 1;
+    }else isRead = 0;
+    checkReadfile(isRead);
+    //Clear old output
+    clearOldOutput(result_exp);
+    //Check (Done 09:57 02/02/2024)
+    Matrix *test = new Matrix("A", 1, 1, {{5}});
+    Matrix *test1 = new Matrix("B", 2, 2, {{5,3},{4,1}});
+    Matrix *A = new Matrix("C", 2, 2, {{1,2},{3,4}});
+    std::string expression;
+    while (getline(std::cin, expression)){
+        if (expression[0] == '\0')
+			break;
+        Expression *exp = new Expression(expression+'~');
+        if(!exp->checkVar(MatrixName)){
+            std::cout << "Error: Invalid Token" << std::endl;
+            delete exp;
+            continue;
+        }
+        exp->ProcessTokens(matrices, MatrixName);
+        exp->printCalculation(result_exp);
+        delete exp;
+    }
+    
 // HCMUT
-// Check Done 08:46 24/01/2024
+// Check Done 00:12 05/02/2024
     return 0;
 }
