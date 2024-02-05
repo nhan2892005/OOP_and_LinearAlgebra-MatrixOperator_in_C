@@ -19,6 +19,10 @@ class Matrix
         int col;
         vector<vector<double>> matrix;
     public:
+        void rename(string name)
+        {
+            nameofMatrix = name;
+        }
         Matrix(string name, int r, int c, vector<vector<double>> m)
             : nameofMatrix(name), row(r), col(c), matrix(m) {}
         void getName(string fileName)
@@ -343,7 +347,7 @@ class Matrix
                     temp[i][j] = matrix[j][i];
                 }
             }
-            return Matrix("Transpose of " + nameofMatrix, col, row, temp);
+            return Matrix(nameofMatrix+"transpose", col, row, temp);
         }
         //Trace of a matrix (Vết của ma trận)
         double trace()
@@ -389,7 +393,7 @@ class Matrix
         }
 
         //Multiplication of a matrix with a number (Nhân ma trận với một số)
-        Matrix operator*(const double & n)
+        Matrix operator*(double n)
         {
             vector<vector<double>> temp(row, vector<double>(col, 0));
             for (int i = 0; i < row; i++)
@@ -429,8 +433,15 @@ class Matrix
         //Multiplication of two matrices (Nhân hai ma trận)
         //If the two matrices don't have valid size, print "Error!"
         //    and return a matrix with 0 row and 0 column
-        Matrix operator*(const Matrix & m)
+        Matrix operator*(Matrix m)
         {
+            if (col == 1 && row == 1){
+                int temp = matrix[0][0];
+                return m * temp;
+            }
+            if (m.row == 1 && m.col == 1){
+                return (*this).operator*(m.matrix[0][0]);
+            }
             if (col == m.row)
             {
                 vector<vector<double>> temp(row, vector<double>(m.col, 0));
@@ -463,6 +474,16 @@ class Matrix
             return (*this);
         }
 
+        Matrix operator/(Matrix m)
+        {
+            if (m.row == 1 && m.col == 1 && col ==1 && row == 1){
+                return (*this).operator*(1/m.matrix[0][0]);
+            }else{
+                cout << "Error!" << endl;
+                return Matrix("Ans", 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
+            }
+        }
+
         //Exponentiation of a matrix (Lũy thừa ma trận)
         //If the matrix is not square, print "Error!"
         //    and return a matrix with 0 row and 0 column
@@ -489,6 +510,7 @@ class Matrix
                 cout << "Error!" << endl;
                 return Matrix("Ans", 0, 0, vector<vector<double>>(0, vector<double>(0, 0)));
             }
+            return identity(row);
         }
         //Create Identity matrix (Tạo ma trận đơn vị)
         Matrix identity(int n)
